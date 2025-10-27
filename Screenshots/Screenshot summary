@@ -1,0 +1,63 @@
+🖼️ Screenshot Summary
+
+## GUI Mode — sfs_gui.py
+
+Shows the Secure File Storage (SFS) graphical interface.
+Users can easily choose files, load or generate keyfiles, and perform encryption or decryption through simple buttons.
+
+Example Command:
+
+python sfs_gui.py
+
+Features:
+
+Choose multiple files for encryption/decryption
+
+Load or generate a secure keyfile
+
+Create a vault from multiple files
+
+Simple and user-friendly interface
+
+
+
+---
+
+## CLI Mode — Encryption & Decryption
+
+Demonstrates how to encrypt and decrypt files via terminal using the command-line version of the tool.
+
+Example Commands:
+
+# Encrypt file and store output in a custom directory
+python sfs_cli.py encrypt --in-file myfile.txt --password MyStrongPass --out-dir encrypted_files/
+
+# Decrypt the encrypted file
+python sfs_cli.py decrypt --in-file encrypted_files/myfile.txt.enc --password MyStrongPass --out-dir decrypted_files/
+
+Result:
+
+> File successfully encrypted and decrypted — integrity check: ✅ True
+
+
+
+
+---
+
+## CLI Mode — Quick Encryption Example
+
+Shows a simple one-line encryption using password authentication.
+
+Example Command:
+
+python sfs_cli.py encrypt --in-file myfile.txt --password MyStrongPass --out myfile.txt.enc
+
+Result:
+
+> Encrypted: myfile.txt.enc
+Fast and secure — perfect for single-file protection.
+
+
+
+
+---
