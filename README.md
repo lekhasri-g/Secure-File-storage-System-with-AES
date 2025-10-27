@@ -100,86 +100,97 @@ python sfs_cli.py decrypt --input file.txt.enc --password mypass
 pip install -r requirements.txt
 ```
 
-## Quick next steps after downloading
+🚀 Quick Next Steps After Downloading
 
-Unzip:
+1️⃣ Unzip the Project
 
 unzip sfs_project.zip -d sfs_project
 cd sfs_project
 
 
-Install dependencies:
+---
+
+2️⃣ Install Dependencies
 
 python3 -m pip install -r requirements.txt
 
 
-#Try the CLI (recommended first):
+---
 
-Generate keyfile:
+3️⃣ Try the CLI (Recommended First)
+
+🔑 Generate a Keyfile
 
 python3 sfs_cli.py gen-key -o mykey.key
 
-
-Encrypt (interactive password):
+🔐 Encrypt (with Interactive Password)
 
 python3 sfs_cli.py encrypt --password-prompt -i sample.txt -o sample.txt.enc
 
-
-Decrypt:
+🔓 Decrypt a File
 
 python3 sfs_cli.py decrypt --password-prompt --in-file sample.txt.enc --out-dir ./decrypted
 
 
-Run the GUI (if you installed PyQt5):
+---
+
+4️⃣ Run the GUI (If PyQt5 Is Installed)
 
 python3 sfs_gui.py
 
+The GUI supports:
 
-## Generate keyfile:
+Creating keyfiles
+
+Encrypting single files or vaults
+
+Decrypting files with password or keyfile
+
+
+
+---
+
+🧩 Additional CLI Examples
+
+Generate Keyfile
 
 python3 sfs_cli.py gen-key -o mykey.key
 
-
-Encrypt file with password (prompted):
+Encrypt File with Password (Prompted)
 
 python3 sfs_cli.py encrypt --password-prompt -i sample.pdf -o sample.pdf.enc
 
-
-Encrypt with keyfile:
+Encrypt with Keyfile
 
 python3 sfs_cli.py encrypt --keyfile mykey.key -i sample.pdf -o sample.pdf.enc
 
-
-Create a vault of multiple files:
+Create a Vault of Multiple Files
 
 python3 sfs_cli.py encrypt --vault --password-prompt --in-files file1.txt file2.jpg -o myvault.enc
 
-
-Decrypt a file:
+Decrypt a File
 
 python3 sfs_cli.py decrypt --password-prompt --in-file sample.pdf.enc --out-dir ./decrypted
 
-
-Extract a vault:
+Extract a Vault
 
 python3 sfs_cli.py decrypt --vault --password-prompt --in-file myvault.enc --out-dir ./extracted
 
-#GUI
 
-Run:
+---
 
-python3 sfs_gui.py
+🧠 Security Notes
+
+AES-GCM provides confidentiality and authentication — if verification fails, decryption will raise an error.
+
+PBKDF2 iterations are set high for strong password derivation (you can increase them for added security).
+
+⚠️ Do NOT pass passwords on the CLI in production — always use the password prompt or a keyfile for safety.
 
 
-The GUI supports creating keyfiles, encrypting single files or vaults, and decrypting.
 
-## Security notes
+---
 
-AES-GCM provides confidentiality and authentication. If authentication fails, decryption raises an error.
-
-PBKDF2 iterations are set high for password strength; you can increase (but it will slow down).
-
-Do NOT pass passwords on CLI in production; use the password prompt or keyfile.
 
 
 ---
